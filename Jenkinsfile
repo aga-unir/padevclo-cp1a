@@ -5,8 +5,7 @@ pipeline {
         stage('GetCode') {
             steps {
                 // Obtener código del repositorio
-                git 'https://github.com/aga-unir/padevclo-cp1a.git'
-                
+                git branch: 'develop', url: 'https://github.com/aga-unir/padevclo-cp1a.git'                
             }
         }
                 
