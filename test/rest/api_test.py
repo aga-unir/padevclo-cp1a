@@ -4,6 +4,7 @@ import unittest
 from urllib.request import urlopen
 
 import pytest
+import time
 
 BASE_URL = "http://localhost:5000"
 BASE_URL_MOCK = "http://localhost:9090"
@@ -27,6 +28,7 @@ class TestApi(unittest.TestCase):
 
     def test_api_sqrt(self):
         url = f"{BASE_URL_MOCK}/calc/sqrt/64"
+        time.sleep(30) # Sleep for 30 seconds
         response = urlopen(url, timeout=DEFAULT_TIMEOUT)
         self.assertEqual(
             response.status, http.client.OK, f"Error en la petición API a {url}"
