@@ -48,10 +48,10 @@ class TestCalculate(unittest.TestCase):
     #    -----------------------------------------------
     #    TOTAL            31      1      6      1    95%
 
-    # def test_divide_method_fails_by_zero(self):
-        # self.assertRaises(TypeError, self.calc.divide, 4, 0)
-        # self.assertRaises(TypeError, self.calc.divide, 0, 0)
-        # self.assertRaises(TypeError, self.calc.divide, -0, -0)
+    def test_divide_method_fails_by_zero(self):
+        self.assertRaises(TypeError, self.calc.divide, 4, 0)
+        self.assertRaises(TypeError, self.calc.divide, 0, 0)
+        self.assertRaises(TypeError, self.calc.divide, -0, -0)
     
     def test_divide_method_fails_with_nan_parameter(self):
         self.assertRaises(TypeError, self.calc.divide, "2", 2)
