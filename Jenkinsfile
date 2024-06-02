@@ -5,7 +5,7 @@ pipeline {
         stage('GetCode') {
             steps {
                 // Obtener código del repositorio
-                git 'https://github.com/aga-unir/padevclo-cp1a.git'
+                 git branch: 'feature_fix_coverage', url: 'https://github.com/aga-unir/padevclo-cp1a.git'
                 
             }
         }
