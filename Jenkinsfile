@@ -83,9 +83,9 @@ pipeline {
                         set FLASK_APP=app\\api.py
                         curl localhost:5000/stopServer
                         sleep 20 & start flask run & sleep 10
-                        start C:\\U01-Unir\\Lab\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t test\\jmeter\\flask.jmx -f -l 'flask.jtl'
                     '''
-
+                    bat 'C:\\U01-Unir\\Lab\\apache-jmeter-5.6.3\\bin\\jmeter.bat -n -t test\\jmeter\\flask.jmx -f -l flask.jtl'
+                    perfReport sourceDataFiles: 'flask.jtl'
                 }
             }
         }
