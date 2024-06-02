@@ -35,10 +35,23 @@ class TestCalculate(unittest.TestCase):
         self.assertRaises(TypeError, self.calc.add, object(), 2)
         self.assertRaises(TypeError, self.calc.add, 2, object())
 
-    def test_divide_method_fails_by_zero(self):
-        self.assertRaises(TypeError, self.calc.divide, 4, 0)
-        self.assertRaises(TypeError, self.calc.divide, 0, 0)
-        self.assertRaises(TypeError, self.calc.divide, -0, -0)
+    # Se comenta el sigueinte bloque para provocar la vista en el informe de 
+    # la línea sobre la que no se pasa (ref. division by zero) al realizar
+    # el análisis del mòdulo coverage (ejemplo visto en clase)
+    #
+    #    Resultado buscado en el informe:
+    #    C:\U01-Unir\Code\aga-unir\padevclo-cp1b>coverage report
+    #    Name          Stmts   Miss Branch BrPart  Cover
+    #    -----------------------------------------------
+    #    app\calc.py      24      1      4      1    93%
+    #    app\util.py       7      0      2      0   100%
+    #    -----------------------------------------------
+    #    TOTAL            31      1      6      1    95%
+
+    # def test_divide_method_fails_by_zero(self):
+        # self.assertRaises(TypeError, self.calc.divide, 4, 0)
+        # self.assertRaises(TypeError, self.calc.divide, 0, 0)
+        # self.assertRaises(TypeError, self.calc.divide, -0, -0)
     
     def test_divide_method_fails_with_nan_parameter(self):
         self.assertRaises(TypeError, self.calc.divide, "2", 2)
